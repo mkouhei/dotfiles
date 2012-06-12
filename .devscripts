@@ -1,0 +1,2 @@
+DEBSIGN_KEYID=0x7E37CE41
+DEBUILD_LINTIAN_OPTS="-i -I --show-overrides "

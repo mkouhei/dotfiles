@@ -1,0 +1,5 @@
+[user]
+	email = mkouhei@palmtb.net
+	name = Kouhei Maeda
+[core]
+	excludesfile = ~/.gitignore
