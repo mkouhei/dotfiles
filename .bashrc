@@ -104,11 +104,6 @@ export QUILT_PATCHES="debian/patches"
 
 #TZ='Pacific/Honolulu'; export TZ
 
-if [ "$DESKTOP_SESSION" = "awesome" ]; then
-    test -f ~/bin/kbdset && ~/bin/kbdset
-    test -d ~/wallpaper && awsetbg -c -r ~/wallpaper
-fi
-
 SESSION=`tmux ls 2> /dev/null | awk -F: '!/attached/ { print $1 }' | head -1`
 if [ ! -z $SESSION ]; then
 	tmux attach -t $SESSION
