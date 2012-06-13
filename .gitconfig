@@ -2,4 +2,5 @@
 	email = mkouhei@palmtb.net
 	name = Kouhei Maeda
 [core]
+	whitespace = space-before-tab,trailing-space,indent-with-non-tab
 	excludesfile = ~/.gitignore
