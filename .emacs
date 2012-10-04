@@ -20,3 +20,5 @@
 ;; set cua-mode
 (cua-mode t)
 (setq cua-enable-cua-keys nil) ; disable cua keybind
+
+(setq frame-background-mode (frame-parameter nil 'background-mode))
