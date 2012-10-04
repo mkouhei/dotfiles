@@ -3,3 +3,5 @@
 _build/
 *.egg-info/
 dist/
+.omakedb*
+*.omc
