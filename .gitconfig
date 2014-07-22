@@ -1,6 +1,7 @@
-[user]
-	email = mkouhei@palmtb.net
-	name = Kouhei Maeda
 [core]
 	whitespace = space-before-tab,trailing-space,indent-with-non-tab
 	excludesfile = ~/.gitignore
+	pager = lv -c
+[user]
+	name = Kouhei Maeda
+	email = mkouhei@palmtb.net

@@ -109,5 +109,9 @@ if [ ! -z $SESSION ]; then
 	tmux attach -t $SESSION
 fi
 
-source /etc/bash_completion.d/git
+source /etc/bash_completion
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+export GOPATH=$HOME/devel/gocode:/usr/share/gocode
+
+

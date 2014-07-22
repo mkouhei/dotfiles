@@ -5,3 +5,5 @@ _build/
 dist/
 .omakedb*
 *.omc
+.tox
+.coverage
