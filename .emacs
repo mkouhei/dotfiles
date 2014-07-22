@@ -29,6 +29,8 @@
       (if (file-exists-p "/usr/bin/iceweasel")
 	  "/usr/bin/iceweasel" "/usr/bin/gchromiu"))
 
+(global-auto-revert-mode t)
+
 ;; set cua-mode
 (cua-mode t)
 (setq cua-enable-cua-keys nil) ; disable cua keybind
