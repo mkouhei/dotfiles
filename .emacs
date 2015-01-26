@@ -47,9 +47,6 @@
 (setq-default c-basic-offset 4)
 (setq-default indent-tabs-mode nil)
 (put 'set-goal-column 'disabled nil)
-(autoload 'pylint "pylint")
-(add-hook 'python-mode-hook 'pylint-add-menu-items)
-(add-hook 'python-mode-hook 'pylint-add-key-bindings)
 
 (add-to-list 'exec-path (expand-file-name "~/devel/gocode/bin"))
 (add-hook 'go-mode-hook (lambda ()
@@ -65,7 +62,22 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (require 'go-autocomplete)
+;(add-to-list 'load-path "~/devel/gocode/src/github.com/golang/lint/misc/emacs")
+;(require 'golint)
 
-;;(load-file "~/.emacs.d/ac-python.el")
-;;(require 'ac-python)
+;(load-file "~/.emacs.d/ac-python.el")
+;(require 'ac-python)
+;(add-to-list 'ac-modes 'python-mode-hook)
 
+(load-file "~/.emacs.d/ipython.el")
+(require 'ipython)
+(autoload 'pylint "pylint")
+(add-hook 'python-mode-hook 'pylint-add-menu-items)
+(add-hook 'python-mode-hook 'pylint-add-key-bindings)
+
+
+(add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
+
+(load-file "~/.emacs.d/nyan-mode/nyan-mode.el")
+(nyan-mode)
+(nyan-start-animation)
