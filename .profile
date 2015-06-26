@@ -10,7 +10,6 @@ umask 022
 
 if [ "$DESKTOP_SESSION" = "awesome" ]; then
     test -f ~/bin/kbdset && ~/bin/kbdset
-    test -d ~/wallpaper && awsetbg -c -r ~/wallpaper
 fi
 
 # if running bash
