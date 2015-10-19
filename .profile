@@ -8,9 +8,10 @@
 # for ssh logins, install and configure the libpam-umask package.
 umask 022
 
-if [ "$DESKTOP_SESSION" = "awesome" ]; then
-    test -f ~/bin/kbdset && ~/bin/kbdset
-fi
+#if [ "$DESKTOP_SESSION" = "awesome" ]; then
+#   test -f ~/bin/kbdset && ~/bin/kbdset
+#fi
+test -f ~/bin/kbdset && ~/bin/kbdset
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
