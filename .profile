@@ -9,9 +9,9 @@
 umask 022
 
 #if [ "$DESKTOP_SESSION" = "awesome" ]; then
-#   test -f ~/bin/kbdset && ~/bin/kbdset
+#   test -f ~/bin/kbdset.sh && ~/bin/kbdset.sh
 #fi
-test -f ~/bin/kbdset && ~/bin/kbdset
+test -f ~/bin/kbdset.sh && ~/bin/kbdset.sh
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
