@@ -6,3 +6,5 @@
 	name = Kouhei Maeda
 	email = mkouhei@palmtb.net
 	signingkey = 7E37CE41
+[credential]
+	helper = store
