@@ -17,6 +17,7 @@
 (load-file "/usr/share/emacs/site-lisp/emacs-mozc/mozc.el")
 (set-language-environment "Japanese")
 (setq default-input-method "japanese-mozc")
+(prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (setq default-file-name-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
