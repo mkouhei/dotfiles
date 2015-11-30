@@ -129,3 +129,5 @@ PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 export GOPATH=$HOME/devel/gocode:/usr/share/gocode
 
+# configuration custom environment variable
+test -f $HOME/.envrc && . $HOME/.envrc
