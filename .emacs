@@ -41,7 +41,7 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
-(load-file "~/.emacs.d/gjslint.el")
+;;(load-file "~/.emacs.d/gjslint.el")
 ;;(require 'gjslint)
 (add-hook 'js2-mode-hook
 		  (lambda () (flymake-mode t)))
@@ -49,29 +49,29 @@
 (setq-default indent-tabs-mode nil)
 (put 'set-goal-column 'disabled nil)
 
-(add-to-list 'exec-path (expand-file-name "~/devel/gocode/bin"))
-(add-hook 'go-mode-hook (lambda ()
-                          (local-set-key (kbd "M-.") 'godef-jump)))
+(add-to-list 'load-path "~/.emacs.d/vendor/go-mode.el")
+(require 'go-mode-autoloads)
 
 (add-hook 'before-save-hook 'gofmt-before-save)
 
-(add-to-list 'load-path "~/devel/gocode/src/github.com/dougm/goflymake")
-(require 'go-flymake)
+;(add-to-list 'load-path "~/devel/gocode/src/github.com/dougm/goflymake")
+;(require 'go-flymake)
+;(require 'go-flycheck)
 
 (require 'auto-complete)
 (add-to-list 'ac-dictionary-directories "/usr/share/auto-complete/dict/")
 (require 'auto-complete-config)
 (ac-config-default)
 (require 'go-autocomplete)
-;(add-to-list 'load-path "~/devel/gocode/src/github.com/golang/lint/misc/emacs")
+;(add-to-list 'load-path (concat (getenv "GOPATH") "~/devel/gocode/src/github.com/golang/lint/misc/emacs"))
 ;(require 'golint)
 
-;(load-file "~/.emacs.d/ac-python.el")
+;(add-to-list 'load-path "~/.emacs.d/vendor/ac-python.el")
 ;(require 'ac-python)
 ;(add-to-list 'ac-modes 'python-mode-hook)
 
-(load-file "~/.emacs.d/ipython.el")
-(require 'ipython)
+;(add-to-list 'load-path "~/.emacs.d/vendor/ipython.el")
+;(require 'ipython)
 (autoload 'pylint "pylint")
 (add-hook 'python-mode-hook 'pylint-add-menu-items)
 (add-hook 'python-mode-hook 'pylint-add-key-bindings)
@@ -79,6 +79,35 @@
 
 (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
 
-(load-file "~/.emacs.d/nyan-mode/nyan-mode.el")
+(load-file "~/.emacs.d/vendor/nyan-mode/nyan-mode.el")
 (nyan-mode)
 (nyan-start-animation)
+
+
+(add-hook 'html-mode-hook
+		  (lambda ()
+			;; Default indentation is usually 2 spaces, changing to 4.
+			(set (make-local-variable 'sgml-basic-offset) 2)))
+
+(defun coffee-custom ()
+  "coffee-mode-hook"
+ (set (make-local-variable 'tab-width) 2)
+ (setq coffee-tab-width 2))
+
+(add-hook 'coffee-mode-hook
+  '(lambda() (coffee-custom)))
+
+(add-to-list 'load-path "~/.emacs.d/vendor/scss-mode")
+
+(require 'scss-mode)
+(add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
+
+(defun scss-custom ()
+  "scss-mode-hook"
+  (and
+   (set (make-local-variable 'css-indent-offset) 2)
+   (set (make-local-variable 'scss-compile-at-save) nil)
+   )
+  )
+(add-hook 'scss-mode-hook
+  '(lambda() (scss-custom)))
