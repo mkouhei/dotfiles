@@ -46,6 +46,7 @@
 (add-hook 'js2-mode-hook
 		  (lambda () (flymake-mode t)))
 (setq-default c-basic-offset 4)
+(setq-default js-indent-level 2)
 (setq-default indent-tabs-mode nil)
 (put 'set-goal-column 'disabled nil)
 
