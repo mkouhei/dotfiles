@@ -84,6 +84,8 @@
 (nyan-mode)
 (nyan-start-animation)
 
+(setq plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
+(load-file "~/.emacs.d/vendor/plantuml-mode/plantuml-mode.el")
 
 (add-hook 'html-mode-hook
 		  (lambda ()
